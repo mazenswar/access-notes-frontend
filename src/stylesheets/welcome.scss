@@ -1,0 +1,27 @@
+.welcome-container {
+  background: radial-gradient(#1da8ac, #22616d);
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    cursor: default;
+    color: white;
+    opacity: 0;
+    overflow: hidden;
+    animation-name: load;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    @keyframes load {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}

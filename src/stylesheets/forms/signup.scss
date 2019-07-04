@@ -1,0 +1,36 @@
+h1 {
+  text-align: center;
+  height: fit-content;
+  margin: 2vw;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  input {
+    width: 30%;
+    margin: 1vw;
+    border-radius: 40px;
+    border: 1px solid #262626;
+    padding: 0.5vw;
+  }
+  input:focus {
+    outline: 0;
+  }
+  input[type='submit'] {
+    background: #262626;
+    color: white;
+    width: 15%;
+    padding: 1.5vw;
+    font-size: 1vw;
+    border: none;
+    border-radius: 40px;
+  }
+  .validation-error {
+    color: red;
+    font-weight: bold;
+    font-size: 1.2vw;
+    text-align: center;
+  }
+}

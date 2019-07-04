@@ -1,0 +1,21 @@
+.notes-ul {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  a {
+    margin: 1vw;
+    width: 70%;
+    text-align: center;
+    padding: 1vw;
+    border: 1px solid #262626;
+    text-decoration: none;
+    color: #262626;
+    transition: 0.5s;
+    &:hover {
+      background-color: #262626;
+      color: white;
+    }
+  }
+}

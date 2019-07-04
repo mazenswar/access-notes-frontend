@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+// Components
+import Nav from './Components/Master/Nav';
+import RouterComp from './Routing/RouterComp';
+// Adapter Functions
+import { persistUserFromDB } from './Adapters/UsersAdapter';
+import { getNotesFromDB } from './Adapters/NotesAdapter';
+// stylesheets
+import './stylesheets/master.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  componentDidMount() {
+    const { getUser, getNotes } = this.props;
+    getUser();
+    getNotes();
+  }
+
+  render() {
+    return (
+      <BrowserRouter>
+        <Nav />
+        <RouterComp />
+      </BrowserRouter>
+    );
+  }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  getUser: () => {
+    if (localStorage.getItem('token')) {
+      dispatch(persistUserFromDB());
+    }
+  },
+  getNotes: () => {
+    dispatch(getNotesFromDB());
+  },
+});
+
+const mapStateToProps = state => state;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
