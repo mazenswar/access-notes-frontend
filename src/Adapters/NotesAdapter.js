@@ -3,6 +3,7 @@ import {
   newNoteAction,
   getNotesAction,
   newCommentAction,
+  createNewLikeAction,
 } from '../Redux/actions/NotesActions';
 
 // New Note
@@ -33,12 +34,6 @@ export const getNotesFromDB = () => dispatch => {
     });
 };
 
-// Get Show Note
-
-export const fetchShowNoteFromDB = id => {
-  return fetch(`${BASE_URL}/notes/${id}`).then(r => r.json());
-};
-
 // Get tag notes
 
 export const fetchTagNotesFromDB = id => {
@@ -67,5 +62,27 @@ export const newCommentToDB = (noteId, comment, userId) => dispatch => {
     .then(r => r.json())
     .then(commentObj => {
       dispatch(newCommentAction(commentObj));
+    });
+};
+
+// Likes
+
+const newLikeConfig = (userId, noteId) => ({
+  method: 'POST',
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    user_id: userId,
+    note_id: noteId,
+  }),
+});
+
+export const createNewLikeToDB = (userId, noteId) => dispatch => {
+  fetch(`${BASE_URL}/likes`, newLikeConfig(userId, noteId))
+    .then(r => r.json())
+    .then(likeObj => {
+      dispatch(createNewLikeAction(likeObj));
     });
 };

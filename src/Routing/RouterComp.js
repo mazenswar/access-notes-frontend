@@ -11,6 +11,8 @@ import Profile from '../Containers/Users/Profile';
 import NewNote from '../Containers/Notes/NewNote';
 import ShowNote from '../Containers/Notes/ShowNote';
 import ShowTagPage from '../Containers/Notes/ShowTagPage';
+import UserShow from '../Containers/Users/UserShow';
+import AllTags from '../Containers/Notes/AllTags';
 
 const RouterComp = props => {
   const { username } = props;
@@ -27,7 +29,9 @@ const RouterComp = props => {
       <Route exact path="/notes" component={AllNotes} />
       {profileRoute()}
       <Route exact path="/notes/:id" component={ShowNote} />
+      <Route exact path="/tags" component={AllTags} />
       <Route exact path="/tags/:id" component={ShowTagPage} />
+      <Route exact path="/users/:id" component={UserShow} />
     </Switch>
   );
 };

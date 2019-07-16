@@ -66,8 +66,13 @@ export const persistUserFromDB = () => dispatch => {
   fetch(`${BASE_URL}/auth`, getUserConfig())
     .then(r => r.json())
     .then(data => {
-      dispatch(getUserAction(data.user));
+      dispatch(getUserAction(data));
     });
 };
 
 // 'Authorization': `Bearer ${localStorage.getItem('token')}`
+
+// get show user
+export const fetchUserFromDB = id => {
+  return fetch(`${BASE_URL}/users/${id}`).then(r => r.json());
+};

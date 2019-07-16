@@ -24,8 +24,7 @@ class NewNote extends React.Component {
 
   handleKeyPress = e => {
     const { tags } = this.state;
-    const input = e.target.value;
-
+    const input = e.target.value.trim().toLowerCase();
     if (e.key === 'Enter' && input !== '' && !tags.includes(input)) {
       this.setState({ tags: [input, ...this.state.tags] });
       e.target.value = '';
@@ -76,13 +75,14 @@ class NewNote extends React.Component {
             name="title"
             value={title}
             onChange={this.handleTitleChange}
-            placeholder="Title"
+            placeholder="What's the title of this note?"
           />
-          <label>Tags</label>
+
           <input
             className="note-tag"
             name="tags"
             onKeyPress={this.handleKeyPress}
+            placeholder="Add tags (press enter to add tag)"
           />
           {tags.length > 0 ? (
             <div className="tag-container">{this.showTags()}</div>

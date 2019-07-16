@@ -1,3 +1,7 @@
+input {
+  text-align: center;
+}
+
 .tag-container {
   background-color: #9a9a9a;
   padding: 1vw;
@@ -35,6 +39,18 @@
   > div.ck.ck-editor__main
   > div {
   height: 35vw;
+  border-radius: 0 0 40px 40px;
+}
+
+#root
+  > div.ck.ck-reset.ck-editor.ck-rounded-corners
+  > div.ck.ck-editor__top.ck-reset_all
+  > div
+  > div.ck.ck-sticky-panel__content
+  > div {
+  border-radius: 30px 30px 0 0;
+  display: flex;
+  justify-content: center;
 }
 
 .create-button {
@@ -47,19 +63,19 @@
 }
 
 .note-title {
-  width: 80%;
-  border-radius: 0;
-  padding: 1vw 0;
-  border: 0;
   background-color: #fafafa;
+  width: 50%;
+  padding: 1vw;
   border: 1px solid #bdbcbc;
+  border-radius: 40px;
+  font-size: 1.5vw;
 }
 
 .note-tag {
-  width: 20%;
-  border-radius: 0;
-  padding: 1vw 0;
-  border: 0;
   background-color: #fafafa;
+  width: 30%;
+  border-radius: 40px;
+  padding: 1vw;
   border: 1px solid #bdbcbc;
+  font-size: 1vw;
 }

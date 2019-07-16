@@ -22,4 +22,105 @@
       }
     }
   }
+  .likes-dropdown {
+    height: 0;
+    overflow: hidden;
+    transition: 0.8s;
+    background-color: #eeeeee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    .user-likes {
+      display: block;
+      text-decoration: none;
+      color: black;
+    }
+  }
+  h2 {
+    font-size: 2.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      cursor: pointer;
+    }
+  }
+
+  .like {
+    display: block;
+    color: white;
+    padding: 0;
+    border-radius: 100%;
+    width: 5vw;
+    height: 5vw;
+    margin: 3.5vw;
+
+    img {
+      max-width: 100%;
+      transition: 0.5s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .new-comment {
+    padding-top: 4vw;
+    display: flex;
+    justify-content: center;
+    input {
+      margin: 0 2vw;
+      width: 65%;
+      padding: 1.5vw;
+      border-radius: 30px;
+      border: 1px solid #eeeeee;
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+
+  .note-comments {
+    padding: 0;
+    list-style: none;
+    padding: 1vw;
+    .comment-li {
+      margin: 0.7vw;
+      padding: 1vw 3vw;
+      border-radius: 15px;
+      background: #eeeeee;
+      display: flex;
+      align-items: center;
+      .comment-content {
+        display: flex;
+        align-items: center;
+        padding: 1vw;
+        span {
+          font-weight: bold;
+          margin: auto 1vw;
+          padding: 1vw;
+        }
+      }
+      a {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #262626;
+        transition: 0.8s;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      img {
+        border-radius: 100%;
+        height: 40%;
+        width: 40%;
+        margin: 0.5vw;
+      }
+    }
+  }
 }

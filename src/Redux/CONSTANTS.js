@@ -12,3 +12,5 @@ export const GET_NOTES = 'GET_NOTES';
 export const NEW_NOTE = 'NEW_NOTE';
 
 export const NEW_COMMENT = 'NEW_COMMENT';
+
+export const NEW_LIKE = 'NEW_LIKE';

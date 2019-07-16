@@ -1,0 +1,49 @@
+.tag-notes-ul {
+  margin: auto;
+  width: 70%;
+  padding: 3vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .tag-notes {
+    text-decoration: none;
+    color: #262626;
+    display: flex;
+    margin: 1vw;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    border: 1px solid #262626;
+    padding: 2vw 0;
+    transition: 0.8s;
+    &:hover {
+      background-color: #262626;
+      color: white;
+    }
+    p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2vw;
+      width: 70%;
+      margin: 0;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 30%;
+      img {
+        border-radius: 100%;
+        height: 5vw;
+        width: 5vw;
+      }
+      span {
+        font-size: 1vw;
+      }
+    }
+  }
+}

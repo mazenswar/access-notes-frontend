@@ -1,4 +1,4 @@
-import { GET_NOTES, NEW_NOTE, NEW_COMMENT } from '../CONSTANTS';
+import { GET_NOTES, NEW_NOTE, NEW_COMMENT, NEW_LIKE } from '../CONSTANTS';
 
 const defaultState = [];
 
@@ -13,6 +13,17 @@ const addNewComment = (notes, comment) => {
   return notesCopy;
 };
 
+const addNewLike = (notes, like) => {
+  const notesCopy = [...notes];
+  notesCopy.map(note => {
+    if (note.id === like.note.id) {
+      return note.likes.push(like);
+    }
+    return note;
+  });
+  return notesCopy;
+};
+
 const notesReducer = (state = defaultState, action) => {
   switch (action.type) {
     case GET_NOTES:
@@ -21,6 +32,8 @@ const notesReducer = (state = defaultState, action) => {
       return [action.payload, ...state];
     case NEW_COMMENT:
       return addNewComment(state, action.payload);
+    case NEW_LIKE:
+      return addNewLike(state, action.payload);
     default:
       return state;
   }

@@ -1,3 +1,7 @@
+h2 {
+  text-align: center;
+  font-size: 4vw;
+}
 .user-profile-img {
   margin: auto;
   display: block;
@@ -5,4 +9,26 @@
   height: 30vw;
 
   border-radius: 100%;
+}
+
+.user-show-notes {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  a {
+    text-decoration: none;
+    color: #262626;
+    transition: 0.8s;
+    padding: 2vw;
+    font-size: 2vw;
+    text-align: center;
+    border: 1px solid #262626;
+    border-radius: 40px;
+    width: 80%;
+    margin: 1vw auto;
+    &:hover {
+      background-color: #262626;
+      color: white;
+    }
+  }
 }
